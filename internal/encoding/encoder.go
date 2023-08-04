@@ -38,10 +38,6 @@ func (e *EncoderRegistry) RegisterEncoder(format string, enc Encoder) error {
 	e.mu.Lock()
 	defer e.mu.Unlock()
 
-	if _, ok := e.encoders[format]; ok {
-		return ErrEncoderFormatAlreadyRegistered
-	}
-
 	e.encoders[format] = enc
 
 	return nil

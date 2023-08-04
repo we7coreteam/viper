@@ -382,6 +382,14 @@ func (v *Viper) resetEncoding() {
 	v.decoderRegistry = decoderRegistry
 }
 
+func (v *Viper) GetEncoderRegistry() *encoding.EncoderRegistry {
+	return v.encoderRegistry
+}
+
+func (v *Viper) GetDecoderRegistry() *encoding.DecoderRegistry {
+	return v.decoderRegistry
+}
+
 type defaultRemoteProvider struct {
 	provider      string
 	endpoint      string
